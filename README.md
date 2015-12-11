@@ -1,4 +1,4 @@
-## My name is Danny and I am a little lazy
+## Purchase College Storm Water Measurment
 
 This project can measure water flow in a storm drain. Or lots of other things.
 
