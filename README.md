@@ -38,6 +38,6 @@ _should a sensor break there are detailed setup instructions below_.
 * `sudo hwclock -w` This writes correctly set time to the RTC.
 * `sudo hwclock -r` Print time from RTC to check that everything has worked.
 
-
-
+## Wiring Diagram
+![schematic](https://drive.google.com/file/d/0B3CLeJneHVr6ZGNWcGR2LWk3SUU/view?usp=sharing)
 
