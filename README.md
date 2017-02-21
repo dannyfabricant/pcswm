@@ -41,6 +41,17 @@ _should a sensor break there are detailed setup instructions below_.
 ## Wiring Diagram
 ![schematic](images/schematic.png)
 
+### SCR04 Ultrasonic rangefinder pins
+* _Trig_ to _GPIO23_
+* _Echo_ to _GPIO24_
+* _VCC_ to _5v_
+* _GND_ to _GND_
+
+### Sparkfun DS1307 RTC Module
+* _SDA_ to _SDA_
+* _SCL_ to _SCL_
+* _VCC_ to _5v_
+* _GND_ to _GND_
 
 
 
