@@ -7,7 +7,7 @@ from time import sleep
 import datetime
 import csv
 import os
-import sys
+import glob
 import picam
 
 
@@ -15,7 +15,7 @@ import picam
 sleep(5) 
 
 # period in between measurments
-FREQUENCY_SECONDS = 60 * 5
+FREQUENCY_SECONDS = 60
 
 # set pinmode
 GPIO.setmode(GPIO.BCM)
@@ -63,7 +63,7 @@ def logMedian():
 	directory = '/media/pi/SANDISK/' + day
 	photodir = directory + "/photos"
 	filename = str(directory + "/" + day +'.csv')
-	print directory
+	print day
 	
 	# check if directories exist
 	# create them if they do not
@@ -73,6 +73,18 @@ def logMedian():
 	if os.path.exists(photodir) == False:
 	    os.makedirs(photodir)
 	    print "created directory"
+
+	# if the directories exists create a new csv file and photo directory for this set of measurements.
+	if os.path.exists(directory) == True:
+		counter = len(glob.glob1(directory,"*.csv"))
+		filename = directory + "/" + day + "_" + str(counter + 1) + ".csv"
+		photodir = photodir + "_" + str(counter + 1)
+		os.makedirs(photodir)
+		print filename
+		print photodir
+		print "created directory"
+
+
 
 	# create an empty array to store the measurements
 	data = []
@@ -105,6 +117,8 @@ def logMedian():
 		for row in reader:
 			row_count += 1
 		row_count = str(row_count)
+
+		photocount = row_count + 1
 		photo = picam.takePhotoWithDetails(640,480, 85)
 		photo.save(photodir+"/"+row_count+".jpg")
 	
