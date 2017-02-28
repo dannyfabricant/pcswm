@@ -12,7 +12,7 @@ import picam
 
 
 # wait for time to be set to realtime
-sleep(5) 
+sleep(45) 
 
 # period in between measurments
 FREQUENCY_SECONDS = 60
@@ -64,15 +64,6 @@ def logMedian():
 	photodir = directory + "/photos"
 	filename = str(directory + "/" + day +'.csv')
 	print day
-	
-	# check if directories exist
-	# create them if they do not
-	if os.path.exists(directory) == False:
-	    os.makedirs(directory)
-	    print "created directory"
-	if os.path.exists(photodir) == False:
-	    os.makedirs(photodir)
-	    print "created directory"
 
 	# if the directories exists create a new csv file and photo directory for this set of measurements.
 	if os.path.exists(directory) == True:
@@ -84,7 +75,14 @@ def logMedian():
 		print photodir
 		print "created directory"
 
-
+	# check if directories exist
+	# create them if they do not
+	if os.path.exists(directory) == False:
+	    os.makedirs(directory)
+	    print "created directory"
+	if os.path.exists(photodir) == False:
+	    os.makedirs(photodir)
+	    print "created directory"
 
 	# create an empty array to store the measurements
 	data = []
@@ -116,11 +114,11 @@ def logMedian():
 		reader = csv.DictReader(f)
 		for row in reader:
 			row_count += 1
-		row_count = str(row_count)
 
-		photocount = row_count + 1
+		photo_count = str(row_count + 1)
+		row_count = str(row_count)
 		photo = picam.takePhotoWithDetails(640,480, 85)
-		photo.save(photodir+"/"+row_count+".jpg")
+		photo.save(photodir+"/"+photo_count+".jpg")
 	
 
 # neverending loop	
