@@ -8,6 +8,7 @@ _should a sensor or Pi break there are detailed setup instructions below_.
 
 ## Usage
 ### _Make sure the switch is set to run before connecting the raspberry pi to power_
+### _Make sure the USB drive is plugged in before connecting the raspberry pi to power_
 * The Batteries should run for 3ish hours. try not to let them run until they die, this can lead to corrupting the SD card and having to Flash a new image onto a new SD card. That process is explained bellow.
 * when the switch is set to shutdown it is best to wait 5-10 minutes before removing the power cable so the last reading to be taken and Raspberry Pi can shutdown safely.
 
@@ -17,7 +18,6 @@ _should a sensor or Pi break there are detailed setup instructions below_.
 * CSV files contain a distance measurment in inches.
 * photo folders contain .jpgs labeled with the row number of its corresponding measurement.
 * files are stored in folders labeled by day YYYY/MM/DD containing .csv files and photos folders labeled with corresponding numbers.
-* 
 
 ## Equipment Used
 1. Raspberry Pi 2 
