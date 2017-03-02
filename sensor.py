@@ -12,7 +12,7 @@ import picam
 
 
 # wait for time to be set to realtime
-sleep(45) 
+sleep(5) 
 
 # period in between measurments
 FREQUENCY_SECONDS = 60
@@ -29,6 +29,34 @@ DELAY = 60*10
 GPIO.setup(18,GPIO.IN)
 
 print 'Press Ctrl-C to quit.'
+
+# set the current directory for the data to todays date
+day = str(time.strftime("%Y-%m-%d"))
+directory = '/media/pi/SANDISK/' + day
+photodir = directory + "/photos"
+filename = str(directory + "/" + day +'.csv')
+print day
+
+# if the directories exists create a new csv file and photo directory for this set of measurements.
+if os.path.exists(directory) == True:
+	counter = len(glob.glob1(directory,"*.csv"))
+	filename = directory + "/" + day + "_" + str(counter + 1) + ".csv"
+	photodir = photodir + "_" + str(counter + 1)
+	os.makedirs(photodir)
+	print filename
+	print photodir
+	print "created directory"
+
+# check if directories exist
+# create them if they do not
+if os.path.exists(directory) == False:
+    os.makedirs(directory)
+    print directory
+    print "created directory"
+if os.path.exists(photodir) == False:
+    os.makedirs(photodir)
+    print photodir
+    print "created directory"
 
 # a detailed description of how this function works is available in the modmypi tutorial
 def distance(): 
@@ -58,32 +86,6 @@ def distance():
 	GPIO.cleanup()
 
 def logMedian():
-	# set the current directory for the data to todays date
-	day = str(time.strftime("%m-%d-%Y"))
-	directory = '/media/pi/SANDISK/' + day
-	photodir = directory + "/photos"
-	filename = str(directory + "/" + day +'.csv')
-	print day
-
-	# if the directories exists create a new csv file and photo directory for this set of measurements.
-	if os.path.exists(directory) == True:
-		counter = len(glob.glob1(directory,"*.csv"))
-		filename = directory + "/" + day + "_" + str(counter + 1) + ".csv"
-		photodir = photodir + "_" + str(counter + 1)
-		os.makedirs(photodir)
-		print filename
-		print photodir
-		print "created directory"
-
-	# check if directories exist
-	# create them if they do not
-	if os.path.exists(directory) == False:
-	    os.makedirs(directory)
-	    print "created directory"
-	if os.path.exists(photodir) == False:
-	    os.makedirs(photodir)
-	    print "created directory"
-
 	# create an empty array to store the measurements
 	data = []
 	loop = 0

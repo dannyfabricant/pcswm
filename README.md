@@ -4,6 +4,16 @@ Built for an ongoing collaborative project between the Natural Sciences and New 
 
 _should a sensor break there are detailed setup instructions below_.
 
+## Usage
+* ### _Make sure the switch is set to run before connecting the raspberry pi to power_
+* The Batteries should run for 3ish hours. try not to let them run until they die, this can lead to corrupting the SD card and having to Flash a new image onto a new SD card. That process is explained bellow.
+* when the switch is set to shutdown it is best to wait 5-10 minutes before removing the power cable so the last reading to be taken and Raspberry Pi can shutdown safely.
+
+## DATA
+* All .CSV files and photos are stored on a connected USB drive.
+* When the Raspberry Pi has been safely shutdown the USB Drive can be removed.
+* files are stored in folders labeled by day YYYY/MM/DD containing .csv files and photos folders labeled with corresponding numbers.
+
 ## Equipment Used
 1. Raspberry Pi 2 
 2. Hc-sr04 digital utrasonic range sensor
