@@ -5,7 +5,7 @@ Built for an ongoing collaborative project between the Natural Sciences and New 
 _should a sensor break there are detailed setup instructions below_.
 
 ## Usage
-* ### _Make sure the switch is set to run before connecting the raspberry pi to power_
+### _Make sure the switch is set to run before connecting the raspberry pi to power_
 * The Batteries should run for 3ish hours. try not to let them run until they die, this can lead to corrupting the SD card and having to Flash a new image onto a new SD card. That process is explained bellow.
 * when the switch is set to shutdown it is best to wait 5-10 minutes before removing the power cable so the last reading to be taken and Raspberry Pi can shutdown safely.
 
