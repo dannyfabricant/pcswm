@@ -2,7 +2,9 @@
 
 Built for an ongoing collaborative project between the Natural Sciences and New Media departments at Purchase College, I am developing a system for the collection of data about storm water runoff from our W1 and W2 parking lots.
 
-_should a sensor break there are detailed setup instructions below_.
+A Raspberry Pi uses an Ultrasonic rangefinder and a camera to record water level at storm water runnoff sites. It records water height and takes a picture of the scene on a USB drive.
+
+_should a sensor or Pi break there are detailed setup instructions below_.
 
 ## Usage
 ### _Make sure the switch is set to run before connecting the raspberry pi to power_
@@ -12,7 +14,10 @@ _should a sensor break there are detailed setup instructions below_.
 ## DATA
 * All .CSV files and photos are stored on a connected USB drive.
 * When the Raspberry Pi has been safely shutdown the USB Drive can be removed.
+* CSV files contain a distance measurment in inches.
+* photo folders contain .jpgs labeled with the row number of its corresponding measurement.
 * files are stored in folders labeled by day YYYY/MM/DD containing .csv files and photos folders labeled with corresponding numbers.
+* 
 
 ## Equipment Used
 1. Raspberry Pi 2 
