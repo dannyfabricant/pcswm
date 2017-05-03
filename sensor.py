@@ -32,7 +32,7 @@ print 'Press Ctrl-C to quit.'
 
 # set the current directory for the data to todays date
 day = str(time.strftime("%Y-%m-%d"))
-directory = '/media/pi/SANDISK/' + day
+directory = '/mnt/usbstorage/' + day
 photodir = directory + "/photos"
 filename = str(directory + "/" + day +'.csv')
 print day
@@ -43,6 +43,11 @@ if os.path.exists(directory) == True:
 	filename = directory + "/" + day + "_" + str(counter + 1) + ".csv"
 	photodir = photodir + "_" + str(counter + 1)
 	os.makedirs(photodir)
+
+	#create blank csv file
+	with open("foo.csv", "w") as my_empty_csv:
+	  pass
+	
 	print filename
 	print photodir
 	print "created directory"

@@ -18,6 +18,8 @@ _should a sensor or Pi break there are detailed setup instructions below_.
 * CSV files contain a distance measurment in inches.
 * photo folders contain .jpgs labeled with the row number of its corresponding measurement.
 * files are stored in folders labeled by day YYYY/MM/DD containing .csv files and photos folders labeled with corresponding numbers.
+* If files are not being written to the USB drive, remove the drive and connect the Raspberry Pi to power. from terminal do the following.
+
 
 ## Equipment Used
 1. Raspberry Pi 2 
